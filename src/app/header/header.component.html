@@ -1,0 +1,14 @@
+<header class="container mx-auto">
+    <nav>
+        <div class="bg-green-900 py-6">
+            <ul class="flex justify-center">
+                <li *ngFor="let li of navbar">
+                    <p>
+                        {{ li.item }}
+                    </p>
+                    <img src="{{ li.image}}" alt="">
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
