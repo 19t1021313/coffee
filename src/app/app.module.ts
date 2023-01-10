@@ -10,6 +10,7 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { PartnerComponent } from './partner/partner.component';
 import { HeaderComponent } from './header/header.component';
 import { NhapComponent } from './pages/nhap/nhap.component';
+import { GaugauComponent } from './pages/gaugau/gaugau.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NhapComponent } from './pages/nhap/nhap.component';
     AboutusComponent,
     PartnerComponent,
     HeaderComponent,
-    NhapComponent
+    NhapComponent,
+    GaugauComponent
   ],
   imports: [
     BrowserModule,
