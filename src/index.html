@@ -11,3 +11,97 @@
   <app-root></app-root>
 </body>
 </html>
+<!-- Navbar Start -->
+<section
+  class="bg-[url('/assets/images/blog/banner.png')] bg-cover bg-center bg-no-repeat"
+>
+  <div class="text-center text-white pt-28 md:pt-36 xl:pt-52 pb-4 lg:pb-7">
+    <h1 class="text-3xl md:mt-0 mt-2 sm:text-5xl Fraunces-600">Quote Card</h1>
+    <p class="text-xs md:text-base mt-2 md:mt-5">
+      <a [routerLink]="['/']" class="pr-2 hover:text-green-400">
+        {{ 'page.quotecard.Homepage' | translate }}</a
+      >/<a [routerLink]="['/blog']" class="px-2 hover:text-green-400">{{ 'page.quotecard.What’snews' | translate }} 
+        </a
+      >/<a
+        [routerLink]="['/quotecard']"
+        routerLinkActive="router-link-active"
+        class="pl-2 hover:text-green-400"
+        >Quote Card</a
+      >
+    </p>
+  </div>
+</section>
+<!-- Navbar End -->
+
+<section class="">
+  <!-- Search Start -->
+  <div class="container mx-auto">
+    <div class="pt-1">
+      <form class="" action="">
+        <div class="relative flex justify-end mt-5 mb-12 mx-6">
+          <input
+            type="text"
+            placeholder="{{ 'page.quotecard.Search' | translate }}"
+            class="block w-[390px] px-5 py-2 bg-white border border-slate-300 border-none rounded-full text-base placeholder-gray-700 Fraunces-400 not-italic shadow-inner drop-shadow-lg outline-none"
+          />
+          <button type="submit" class="absolute top-3 right-4">
+            <i
+              class="las la-search -rotate-90 self-center text-2xl cursor-pointer absolute z-10 right-3 w-5 h-5"
+            ></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Search End -->
+
+  <!-- Start container -->
+  <div class="">
+    <div class="mx-4 lg:mx-0">
+      <div class="w-full h-full gap-5 flex mb-14">
+        <swiper
+          [loop]="true"
+          [loopFillGroupWithBlank]="true"
+          [navigation]="true"
+          [autoplay]="{
+            delay: 5000
+          }"
+          [watchOverflow]="true"
+          [pagination]="{
+            clickable: true,
+            dynamicBullets: true
+          }"
+          [breakpoints]="{
+            '0': {
+              slidesPerView: 1,
+              spaceBetween: 40
+            },
+            '768': {
+              slidesPerView: 2,
+              spaceBetween: 60
+            },
+            '1280': {
+              slidesPerView: 3,
+              spaceBetween: 20
+            }
+          }"
+        >
+          <ng-template ngFor let-item [ngForOf]="listData?.content">
+            <ng-template swiperSlide>
+              <div class="shadow-lg">
+                <a [routerLink]="['/quotecard', item?.slug]">
+                  <img
+                    [src]="item?.thumbnailUrl"
+                    alt=""
+                    class="object-cover h-[650px] mb-16"
+                  />
+                </a>
+              </div>
+            </ng-template>
+          </ng-template>
+        </swiper>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End container -->
